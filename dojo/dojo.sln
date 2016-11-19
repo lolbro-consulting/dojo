@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dojo.server", "dojo.server\dojo.server.csproj", "{BE70C323-CAA5-482E-AECC-F6578E1C0D76}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{3EB9F520-445D-4AA7-9607-A40B6D715402}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchemaMigrator", "SchemaMigrator\SchemaMigrator.csproj", "{ED382481-2593-4E63-BEB4-681CBA41D5F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DojoMigrations", "DojoMigrations\DojoMigrations.csproj", "{8AB017E2-8DB5-4BDD-B5A6-61649AE877AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +21,20 @@ Global
 		{BE70C323-CAA5-482E-AECC-F6578E1C0D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE70C323-CAA5-482E-AECC-F6578E1C0D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE70C323-CAA5-482E-AECC-F6578E1C0D76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED382481-2593-4E63-BEB4-681CBA41D5F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED382481-2593-4E63-BEB4-681CBA41D5F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED382481-2593-4E63-BEB4-681CBA41D5F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED382481-2593-4E63-BEB4-681CBA41D5F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AB017E2-8DB5-4BDD-B5A6-61649AE877AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AB017E2-8DB5-4BDD-B5A6-61649AE877AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AB017E2-8DB5-4BDD-B5A6-61649AE877AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AB017E2-8DB5-4BDD-B5A6-61649AE877AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ED382481-2593-4E63-BEB4-681CBA41D5F8} = {3EB9F520-445D-4AA7-9607-A40B6D715402}
+		{8AB017E2-8DB5-4BDD-B5A6-61649AE877AA} = {3EB9F520-445D-4AA7-9607-A40B6D715402}
 	EndGlobalSection
 EndGlobal
