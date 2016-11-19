@@ -5,10 +5,10 @@ using System.Web;
 
 namespace dojo.server.Models
 {
-    public class DojoOverview
+    public class Goal
     {
-        public int Score { get; set; }
+        public int Points { get; set; }
         public int Target { get; set; }
-        public int DaysRemaining { get; set; }
+        public string Reason { get; set; }
     }
 }

@@ -9,8 +9,9 @@ BEGIN
 
 CREATE TABLE [dbo].[Overview](
 	[Id] [uniqueidentifier] NOT NULL,
-	[AggregateId] [uniqueidentifier] NOT NULL,
 	[Score] int NOT NULL,
+    [Target] int NOT NULL,
+    [DaysRemaining] int NOT NULL,
 	[Updated] [datetime] NOT NULL,
   CONSTRAINT [PK_Overview_Id] PRIMARY KEY CLUSTERED
 (

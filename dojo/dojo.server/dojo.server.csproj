@@ -120,11 +120,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\GoalsController.cs" />
+    <Compile Include="Controllers\CompletedGoalsController.cs" />
     <Compile Include="Controllers\OverviewController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Goal.cs" />
     <Compile Include="Models\DojoOverview.cs" />
+    <Compile Include="Models\CompletedGoal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

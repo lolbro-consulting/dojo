@@ -43,7 +43,9 @@
     <Compile Include="DatabaseMigrationSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Schema\201611181657000-CreateScoreHistoryTable.sql" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Schema\201607291657000-CreateOverviewTable.sql" />
   </ItemGroup>
