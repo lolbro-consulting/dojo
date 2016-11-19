@@ -43,7 +43,9 @@
     <Compile Include="DatabaseMigrationSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Schema\201607291757000-Transaction.sql" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Schema\201607291657000-CreateOverviewTable.sql" />
   </ItemGroup>
