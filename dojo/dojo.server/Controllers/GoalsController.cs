@@ -17,10 +17,10 @@ namespace dojo.server.Controllers
 
         private const string GetSql = @"
             SELECT Points, Target, Reason
-            FROM [Goal]";
+            FROM [Goals]";
 
         private const string InsertSql = @"
-            INSERT INTO [Goal]
+            INSERT INTO [Goals]
            ([Id]
            ,[Amount]
            ,[Target]
