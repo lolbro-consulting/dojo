@@ -11,51 +11,59 @@ using Dapper;
 
 namespace dojo.server.Controllers
 {
-    public class OverviewController : ApiController
+    public class GoalsController : ApiController
     {
         private string connectionString;
 
-        private const string GetScore = @"
-            SELECT Score, Target, DaysRemaining
-            FROM Overview";
+        private const string GetSql = @"
+            SELECT Points, Target, Reason
+            FROM [Goals]";
 
-        private const string UpdateScore = @"
-            UPDATE Overview
-            SET Score = Score + @Amount,
-                Updated = GETDATE()";
+        private const string InsertSql = @"
+            INSERT INTO [Goals]
+           ([Id]
+           ,[Amount]
+           ,[Target]
+           ,[Reason])
+     VALUES
+           (NEWID()
+           ,0
+           ,@Target
+           ,@Reason)";
 
-        public OverviewController()
+        public GoalsController()
         {
             this.connectionString = ConfigurationManager.ConnectionStrings["Dojo"].ConnectionString;
         }
-        public DojoOverview GetOverview()
+        public IEnumerable<Goal> GetGoals()
         {
             using (var conn = new SqlConnection(this.connectionString))
             {
-                var overview =
-                    conn.Query(GetScore)
+                var results =
+                    conn.Query(GetSql)
                         .Select(
                             row =>
-                                new DojoOverview
+                                new Goal
                                 {
-                                    Score = row.Score,
+                                    Points = row.Points,
                                     Target = row.Target,
-                                    DaysRemaining = row.DaysRemaining
+                                    Reason= row.Reason,
                                 })
-                        .First();
-                return overview;
+                        .ToArray();
+                return results;
             }
         }
 
-        public HttpResponseMessage PostScore([FromBody]int amount)
+        public HttpResponseMessage PostGoal([FromBody]Goal goal)
         {
             using (var conn = new SqlConnection(this.connectionString))
             {
                 conn.Execute(
-                            UpdateScore,
+                            InsertSql,
                             new
                             {
-                                Amount = amount
+                                Target = goal.Target,
+                                Reason = goal.Reason,
                             });
             }
             return Request.CreateResponse(HttpStatusCode.OK);

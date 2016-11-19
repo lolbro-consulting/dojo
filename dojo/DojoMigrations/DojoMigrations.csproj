@@ -45,16 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Schema\201607291757000-Transaction.sql" />
+    <EmbeddedResource Include="Schema\201611181657000-CreateScoreHistoryTable.sql" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Schema\201607291657000-CreateOverviewTable.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
