@@ -35,6 +35,7 @@ namespace dojo.server.Controllers
         {
             this.connectionString = ConfigurationManager.ConnectionStrings["Dojo"].ConnectionString;
         }
+
         public IEnumerable<Goal> GetGoals()
         {
             using (var conn = new SqlConnection(this.connectionString))
