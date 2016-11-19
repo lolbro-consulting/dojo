@@ -47,7 +47,7 @@ namespace dojo.server.Controllers
             }
         }
 
-        public HttpResponseMessage PostScore([FromBody]int amount)
+        public DojoOverview PostScore([FromBody]int amount)
         {
             using (var conn = new SqlConnection(this.connectionString))
             {
@@ -57,8 +57,20 @@ namespace dojo.server.Controllers
                             {
                                 Amount = amount
                             });
+
+                var overview =
+                    conn.Query(GetScore)
+                        .Select(
+                            row =>
+                                new DojoOverview
+                                {
+                                    Score = row.Score,
+                                    Target = row.Target,
+                                    DaysRemaining = row.DaysRemaining
+                                })
+                        .First();
+                return overview;
             }
-            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

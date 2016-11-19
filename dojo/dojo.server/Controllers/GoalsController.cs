@@ -22,7 +22,7 @@ namespace dojo.server.Controllers
         private const string InsertSql = @"
             INSERT INTO [Goals]
            ([Id]
-           ,[Amount]
+           ,[Points]
            ,[Target]
            ,[Reason])
      VALUES
@@ -49,6 +49,7 @@ namespace dojo.server.Controllers
                                     Points = row.Points,
                                     Target = row.Target,
                                     Reason= row.Reason,
+                                    Percentage = (int)((decimal)row.Points / (decimal)row.Target * 100)
                                 })
                         .ToArray();
                 return results;

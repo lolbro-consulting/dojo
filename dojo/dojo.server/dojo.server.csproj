@@ -120,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\YodleeController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\GoalsController.cs" />
     <Compile Include="Controllers\CompletedGoalsController.cs" />
@@ -127,7 +128,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Transaction.cs" />
     <Compile Include="Models\Goal.cs" />
     <Compile Include="Models\DojoOverview.cs" />
     <Compile Include="Models\CompletedGoal.cs" />
@@ -148,6 +148,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Users\zixia.zhang\Downloads\dotNet\C#\yodleeapi\yodleeapi.csproj">
+      <Project>{035EA6C5-2712-40A0-8AAC-FA84326B08E6}</Project>
+      <Name>yodleeapi</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
