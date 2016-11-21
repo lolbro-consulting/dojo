@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchemaMigrator", "SchemaMig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DojoMigrations", "DojoMigrations\DojoMigrations.csproj", "{8AB017E2-8DB5-4BDD-B5A6-61649AE877AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yodleeapi", "..\..\..\Users\zixia.zhang\Downloads\dotNet\C#\yodleeapi\yodleeapi.csproj", "{035EA6C5-2712-40A0-8AAC-FA84326B08E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yodleeapi", "dotNet\C#\yodleeapi\yodleeapi.csproj", "{035EA6C5-2712-40A0-8AAC-FA84326B08E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
