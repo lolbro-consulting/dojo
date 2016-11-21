@@ -13,6 +13,7 @@ CREATE TABLE [dbo].[Overview](
     [Target] int NOT NULL,
     [DaysRemaining] int NOT NULL,
 	[Updated] [datetime] NOT NULL,
+    [UserId] varchar(50) NOT NULL
   CONSTRAINT [PK_Overview_Id] PRIMARY KEY CLUSTERED
 (
 	[Id] ASC

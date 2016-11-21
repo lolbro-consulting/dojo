@@ -9,6 +9,8 @@ CREATE TABLE [dbo].[CompletedGoals](
 	[Id] [uniqueidentifier] NOT NULL,
 	[Points] int NOT NULL,
 	[Reason] VARCHAR(100) NOT NULL,
+    [UserId] varchar(50) NOT NULL,
+    [Updated] [datetime] NOT NULL,
   CONSTRAINT [PK_CompletedGoals_Id] PRIMARY KEY CLUSTERED
 (
 	[Id] ASC
@@ -21,6 +23,8 @@ CREATE TABLE [dbo].[Goals](
 	[Points] int NOT NULL,
 	[Target] int NOT NULL,
 	[Reason] VARCHAR(100) NOT NULL,
+    [UserId] varchar(50) NOT NULL,
+    [Updated] [datetime] NOT NULL,
   CONSTRAINT [PK_Goals_Id] PRIMARY KEY CLUSTERED
 (
 	[Id] ASC

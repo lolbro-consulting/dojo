@@ -17,28 +17,33 @@ namespace dojo.server.Controllers
 
         private const string GetSql = @"
             SELECT Points, Reason
-            FROM [CompletedGoals]";
+            FROM [CompletedGoals]
+            WHERE USERID = @UserId
+            ORDER BY Updated desc";
 
         private const string InsertSql = @"
             INSERT INTO [dbo].[CompletedGoals]
            ([Id]
            ,[Points]
-           ,[Reason])
+           ,[Reason]
+            ,UserId, Updated)
      VALUES
            (NEWID()
            ,@Points
-           ,@Reason)";
+           ,@Reason
+            ,@UserId
+            , GETDATE())";
 
         public CompletedGoalsController()
         {
             this.connectionString = ConfigurationManager.ConnectionStrings["Dojo"].ConnectionString;
         }
-        public IEnumerable<CompletedGoal> GetCompletedGoals()
+        public IEnumerable<CompletedGoal> GetCompletedGoals(string Id)
         {
             using (var conn = new SqlConnection(this.connectionString))
             {
                 var results =
-                    conn.Query(GetSql)
+                    conn.Query(GetSql, new { UserId = Id })
                         .Select(
                             row =>
                                 new CompletedGoal
@@ -51,7 +56,7 @@ namespace dojo.server.Controllers
             }
         }
 
-        public HttpResponseMessage PostCompletedGoal([FromBody]CompletedGoal goal)
+        public HttpResponseMessage PostCompletedGoal(string Id, [FromBody]CompletedGoal goal)
         {
             using (var conn = new SqlConnection(this.connectionString))
             {
@@ -59,6 +64,7 @@ namespace dojo.server.Controllers
                             InsertSql,
                             new
                             {
+                                UserId = Id,
                                 Points = goal.Points,
                                 Reason = goal.Reason
                             });
